@@ -1,0 +1,444 @@
+{
+  "properties": {
+    "jobMode": "Batch",
+    "source": {
+      "type": "AzureSqlTable",
+      "connectionSettings": {
+        "type": "AzureSqlDatabase",
+        "typeProperties": {
+          "database": "advworks"
+        },
+        "externalReferences": {
+          "connection": "45c9df8a-6bbe-41da-b4f7-ce3130cbaae1"
+        }
+      }
+    },
+    "destination": {
+      "type": "DelimitedText",
+      "connectionSettings": {
+        "type": "Lakehouse",
+        "typeProperties": {
+          "workspaceId": "00000000-0000-0000-0000-000000000000",
+          "artifactId": "822e46b5-26bc-ba0e-4c6c-1b03d9cb1a7a",
+          "rootFolder": "Files"
+        }
+      }
+    },
+    "policy": {
+      "timeout": "0.12:00:00",
+      "retry": 0
+    }
+  },
+  "activities": [
+    {
+      "id": "c4cc3526-40ae-4454-85de-1d78b99e72a7",
+      "properties": {
+        "source": {
+          "datasetSettings": {
+            "schema": "SalesLT",
+            "table": "Address"
+          },
+          "partitionSettings": {
+            "partitionOption": "None"
+          }
+        },
+        "destination": {
+          "datasetSettings": {
+            "location": {
+              "type": "LakehouseLocation",
+              "fileName": "SalesLT.Address.csv",
+              "folderPath": "raw"
+            },
+            "columnDelimiter": ",",
+            "escapeChar": "\\",
+            "firstRowAsHeader": true,
+            "quoteChar": "\""
+          },
+          "storeSettings": {},
+          "formatSettings": {
+            "fileExtension": ".txt"
+          }
+        },
+        "enableStaging": false,
+        "translator": {
+          "type": "TabularTranslator"
+        },
+        "typeConversionSettings": {
+          "typeConversion": {
+            "allowDataTruncation": true,
+            "treatBooleanAsNumber": false
+          }
+        }
+      }
+    },
+    {
+      "id": "a1391235-2361-4475-834c-1c0f2d0b8c77",
+      "properties": {
+        "source": {
+          "datasetSettings": {
+            "schema": "SalesLT",
+            "table": "Customer"
+          },
+          "partitionSettings": {
+            "partitionOption": "None"
+          }
+        },
+        "destination": {
+          "datasetSettings": {
+            "location": {
+              "type": "LakehouseLocation",
+              "fileName": "SalesLT.Customer.csv",
+              "folderPath": "raw"
+            },
+            "columnDelimiter": ",",
+            "escapeChar": "\\",
+            "firstRowAsHeader": true,
+            "quoteChar": "\""
+          },
+          "storeSettings": {},
+          "formatSettings": {
+            "fileExtension": ".txt"
+          }
+        },
+        "enableStaging": false,
+        "translator": {
+          "type": "TabularTranslator"
+        },
+        "typeConversionSettings": {
+          "typeConversion": {
+            "allowDataTruncation": true,
+            "treatBooleanAsNumber": false
+          }
+        }
+      }
+    },
+    {
+      "id": "17e96174-ef81-4252-b444-80f103d890cd",
+      "properties": {
+        "source": {
+          "datasetSettings": {
+            "schema": "SalesLT",
+            "table": "CustomerAddress"
+          },
+          "partitionSettings": {
+            "partitionOption": "None"
+          }
+        },
+        "destination": {
+          "datasetSettings": {
+            "location": {
+              "type": "LakehouseLocation",
+              "fileName": "SalesLT.CustomerAddress.csv",
+              "folderPath": "raw"
+            },
+            "columnDelimiter": ",",
+            "escapeChar": "\\",
+            "firstRowAsHeader": true,
+            "quoteChar": "\""
+          },
+          "storeSettings": {},
+          "formatSettings": {
+            "fileExtension": ".txt"
+          }
+        },
+        "enableStaging": false,
+        "translator": {
+          "type": "TabularTranslator"
+        },
+        "typeConversionSettings": {
+          "typeConversion": {
+            "allowDataTruncation": true,
+            "treatBooleanAsNumber": false
+          }
+        }
+      }
+    },
+    {
+      "id": "e6d499b0-b5a2-41ed-bcc9-16577300b5d7",
+      "properties": {
+        "source": {
+          "datasetSettings": {
+            "schema": "SalesLT",
+            "table": "Product"
+          },
+          "partitionSettings": {
+            "partitionOption": "None"
+          }
+        },
+        "destination": {
+          "datasetSettings": {
+            "location": {
+              "type": "LakehouseLocation",
+              "fileName": "SalesLT.Product.csv",
+              "folderPath": "raw"
+            },
+            "columnDelimiter": ",",
+            "escapeChar": "\\",
+            "firstRowAsHeader": true,
+            "quoteChar": "\""
+          },
+          "storeSettings": {},
+          "formatSettings": {
+            "fileExtension": ".txt"
+          }
+        },
+        "enableStaging": false,
+        "translator": {
+          "type": "TabularTranslator"
+        },
+        "typeConversionSettings": {
+          "typeConversion": {
+            "allowDataTruncation": true,
+            "treatBooleanAsNumber": false
+          }
+        }
+      }
+    },
+    {
+      "id": "fb7c02b9-69ac-44ad-addb-29e1ea4b966d",
+      "properties": {
+        "source": {
+          "datasetSettings": {
+            "schema": "SalesLT",
+            "table": "ProductCategory"
+          },
+          "partitionSettings": {
+            "partitionOption": "None"
+          }
+        },
+        "destination": {
+          "datasetSettings": {
+            "location": {
+              "type": "LakehouseLocation",
+              "fileName": "SalesLT.ProductCategory.csv",
+              "folderPath": "raw"
+            },
+            "columnDelimiter": ",",
+            "escapeChar": "\\",
+            "firstRowAsHeader": true,
+            "quoteChar": "\""
+          },
+          "storeSettings": {},
+          "formatSettings": {
+            "fileExtension": ".txt"
+          }
+        },
+        "enableStaging": false,
+        "translator": {
+          "type": "TabularTranslator"
+        },
+        "typeConversionSettings": {
+          "typeConversion": {
+            "allowDataTruncation": true,
+            "treatBooleanAsNumber": false
+          }
+        }
+      }
+    },
+    {
+      "id": "30872390-5c40-4c1f-bff4-79d01290a8b2",
+      "properties": {
+        "source": {
+          "datasetSettings": {
+            "schema": "SalesLT",
+            "table": "ProductDescription"
+          },
+          "partitionSettings": {
+            "partitionOption": "None"
+          }
+        },
+        "destination": {
+          "datasetSettings": {
+            "location": {
+              "type": "LakehouseLocation",
+              "fileName": "SalesLT.ProductDescription.csv",
+              "folderPath": "raw"
+            },
+            "columnDelimiter": ",",
+            "escapeChar": "\\",
+            "firstRowAsHeader": true,
+            "quoteChar": "\""
+          },
+          "storeSettings": {},
+          "formatSettings": {
+            "fileExtension": ".txt"
+          }
+        },
+        "enableStaging": false,
+        "translator": {
+          "type": "TabularTranslator"
+        },
+        "typeConversionSettings": {
+          "typeConversion": {
+            "allowDataTruncation": true,
+            "treatBooleanAsNumber": false
+          }
+        }
+      }
+    },
+    {
+      "id": "c3c4c68c-efec-4d54-9b29-03bce4791a90",
+      "properties": {
+        "source": {
+          "datasetSettings": {
+            "schema": "SalesLT",
+            "table": "ProductModel"
+          },
+          "partitionSettings": {
+            "partitionOption": "None"
+          }
+        },
+        "destination": {
+          "datasetSettings": {
+            "location": {
+              "type": "LakehouseLocation",
+              "fileName": "SalesLT.ProductModel.csv",
+              "folderPath": "raw"
+            },
+            "columnDelimiter": ",",
+            "escapeChar": "\\",
+            "firstRowAsHeader": true,
+            "quoteChar": "\""
+          },
+          "storeSettings": {},
+          "formatSettings": {
+            "fileExtension": ".txt"
+          }
+        },
+        "enableStaging": false,
+        "translator": {
+          "type": "TabularTranslator"
+        },
+        "typeConversionSettings": {
+          "typeConversion": {
+            "allowDataTruncation": true,
+            "treatBooleanAsNumber": false
+          }
+        }
+      }
+    },
+    {
+      "id": "1e467f03-9170-4c88-b852-64e32c667e84",
+      "properties": {
+        "source": {
+          "datasetSettings": {
+            "schema": "SalesLT",
+            "table": "ProductModelProductDescription"
+          },
+          "partitionSettings": {
+            "partitionOption": "None"
+          }
+        },
+        "destination": {
+          "datasetSettings": {
+            "location": {
+              "type": "LakehouseLocation",
+              "fileName": "SalesLT.ProductModelProductDescription.csv",
+              "folderPath": "raw"
+            },
+            "columnDelimiter": ",",
+            "escapeChar": "\\",
+            "firstRowAsHeader": true,
+            "quoteChar": "\""
+          },
+          "storeSettings": {},
+          "formatSettings": {
+            "fileExtension": ".txt"
+          }
+        },
+        "enableStaging": false,
+        "translator": {
+          "type": "TabularTranslator"
+        },
+        "typeConversionSettings": {
+          "typeConversion": {
+            "allowDataTruncation": true,
+            "treatBooleanAsNumber": false
+          }
+        }
+      }
+    },
+    {
+      "id": "222092f2-c421-4137-bf61-f27f2de08e44",
+      "properties": {
+        "source": {
+          "datasetSettings": {
+            "schema": "SalesLT",
+            "table": "SalesOrderDetail"
+          },
+          "partitionSettings": {
+            "partitionOption": "None"
+          }
+        },
+        "destination": {
+          "datasetSettings": {
+            "location": {
+              "type": "LakehouseLocation",
+              "fileName": "SalesLT.SalesOrderDetail.csv",
+              "folderPath": "raw"
+            },
+            "columnDelimiter": ",",
+            "escapeChar": "\\",
+            "firstRowAsHeader": true,
+            "quoteChar": "\""
+          },
+          "storeSettings": {},
+          "formatSettings": {
+            "fileExtension": ".txt"
+          }
+        },
+        "enableStaging": false,
+        "translator": {
+          "type": "TabularTranslator"
+        },
+        "typeConversionSettings": {
+          "typeConversion": {
+            "allowDataTruncation": true,
+            "treatBooleanAsNumber": false
+          }
+        }
+      }
+    },
+    {
+      "id": "f19290cd-4dc9-4b8d-80f2-f979ddd05de7",
+      "properties": {
+        "source": {
+          "datasetSettings": {
+            "schema": "SalesLT",
+            "table": "SalesOrderHeader"
+          },
+          "partitionSettings": {
+            "partitionOption": "None"
+          }
+        },
+        "destination": {
+          "datasetSettings": {
+            "location": {
+              "type": "LakehouseLocation",
+              "fileName": "SalesLT.SalesOrderHeader.csv",
+              "folderPath": "raw"
+            },
+            "columnDelimiter": ",",
+            "escapeChar": "\\",
+            "firstRowAsHeader": true,
+            "quoteChar": "\""
+          },
+          "storeSettings": {},
+          "formatSettings": {
+            "fileExtension": ".txt"
+          }
+        },
+        "enableStaging": false,
+        "translator": {
+          "type": "TabularTranslator"
+        },
+        "typeConversionSettings": {
+          "typeConversion": {
+            "allowDataTruncation": true,
+            "treatBooleanAsNumber": false
+          }
+        }
+      }
+    }
+  ]
+}

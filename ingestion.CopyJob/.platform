@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "CopyJob",
+    "displayName": "ingestion"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "47eb2319-933f-9380-435b-eadde2df3d34"
+  }
+}
